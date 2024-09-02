@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive UI with 13 Input Fields</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light Gray Background */
+        }
+
+        /* Container Styles */
+       .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff; /* White Background */
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Title Styles */
+       .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Input Group Styles */
+       .input-group {
+            margin-bottom: 20px;
+        }
+
+        /* Label Styles */
+       .label {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        /* Input Field Styles */
+       .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+       .input-field:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Submit Button Styles */
+       .submit-btn {
+            background-color: #4CAF50; /* Green Background */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+       .submit-btn:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Additional Styles */
+       .container {
+            background-image: linear-gradient(to bottom, #3fd25f, #48a2df);
+        }
+
+       .input-group {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       .label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Enter Your Information</h2>
+        <form action="{{url_for('predict')}}" method="post">
+            <div class="input-group">
+                <label for="fname" class="label">CRIM:</label>
+                <input type="text" id="fname" name="CRIM" placeholder="Enter CRIM" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="lname" class="label">ZN:</label>
+                <input type="text" id="lname" name="ZN" placeholder="Enter ZN" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="email" class="label">INDUS:</label>
+                <input type="text" id="email" name="INDUS" placeholder="Enter INDUS" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="phone" class="label">CHAS:</label>
+                <input type="text" id="phone" name="CHAS" placeholder="Enter Chas" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="address" class="label">NOX:</label>
+                <input type="text" id="address" name="NOX" placeholder="Enter NOX" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="city" class="label">RM:</label>
+                <input type="text" id="city" name="RM" placeholder="Enter RM" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="state" class="label">AGE:</label>
+                <input type="text" id="state" name="AGE" placeholder="Enter AGE" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="zip" class="label">DIS:</label>
+                <input type="text" id="zip" name="DIS" placeholder="Enter DIS" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="country" class="label">RAD:</label>
+                <input type="text" id="country" name="RAD" placeholder="Enter RAD" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="username" class="label">TAX:</label>
+                <input type="text" id="username" name="TAX" placeholder="Enter TAX" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="password" class="label">PTRATIO:</label>
+                <input type="text" id="password" name="PTRATIO" placeholder="Enter PTRATIO" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="confirm-password" class="label">B:</label>
+                <input type="text" id="confirm-password" name="B" placeholder="Enter B" class="input-field">
+            </div>
+            <div class="input-group">
+                <label for="bio" class="label">LSTAT:</label>
+                <input type="text" id="bio" name="LSTAT" placeholder="Enter LSTAT" class="input-field">
+            </div>
+            <button class="submit-btn">Submit</button>
+            <br>
+            {{prediction_text}}
+        </form>
+    </div>
+    
+    
+</body>
+</html>
